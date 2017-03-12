@@ -14,6 +14,23 @@
 	<name>utils-microbenchmark</name>
 	<description>Utility module to create micro benchmark context</description>
 	
+	<scm>
+		<url>https://github.com/Gilandel/${project.artifactId}.git</url>
+		<connection>scm:git:git://github.com/Gilandel/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:Gilandel/${project.artifactId}.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	
+	<issueManagement>
+		<system>Github</system>
+		<url>http://github.com/Gilandel/${project.artifactId}/issues</url>
+	</issueManagement>
+	
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/Gilandel/${project.artifactId}</url>
+	</ciManagement>
+	
 	<build>
 		<plugins>
 			<!-- Add license header and generate third-party text file -->
