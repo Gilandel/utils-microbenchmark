@@ -9,7 +9,7 @@
 
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	
 	<name>utils-microbenchmark</name>
 	<description>Utility module to create micro benchmark context</description>
