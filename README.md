@@ -6,6 +6,9 @@
 [![codecov.io](https://codecov.io/github/Gilandel/utils-microbenchmark/coverage.svg?branch=master)](https://codecov.io/github/Gilandel/utils-microbenchmark?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark)
 
+[![codecov.io tree](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master/graphs/tree.svg)](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master)
+[![codecov.io sunburst](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master/graphs/sunburst.svg)](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master)
+
 Work progress:
 ![Code status](http://vbc3.com/script/progressbar.php?text=Code&progress=100)
 ![Test status](http://vbc3.com/script/progressbar.php?text=Test&progress=100)
