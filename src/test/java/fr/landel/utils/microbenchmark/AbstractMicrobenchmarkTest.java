@@ -72,7 +72,7 @@ public class AbstractMicrobenchmarkTest extends AbstractMicrobenchmark {
         } catch (AssertionError e) {
             assertNotNull(e);
             assertThat(e.getMessage(), Matchers.containsString(
-                    "[fr.landel.utils.microbenchmark.AbstractMicrobenchmarkTest.testFormat] Average score is lower than expected:"));
+                    "[fr.landel.utils.microbenchmark.AbstractMicrobenchmarkTest.perfFormat] Average score is lower than expected:"));
         }
     }
 }
