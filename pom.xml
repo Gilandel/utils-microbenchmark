@@ -31,6 +31,10 @@
 		<url>https://travis-ci.org/Gilandel/${project.artifactId}</url>
 	</ciManagement>
 	
+	<properties>
+		<gpg.home>${env.HOME}/build/Gilandel/${project.artifactId}/distribution</gpg.home>
+	</properties>
+	
 	<build>
 		<plugins>
 			<!-- Add license header and generate third-party text file -->
