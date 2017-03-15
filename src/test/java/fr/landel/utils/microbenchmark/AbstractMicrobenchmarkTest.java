@@ -46,7 +46,7 @@ public class AbstractMicrobenchmarkTest extends AbstractMicrobenchmark {
      * Test method for {@link String#format}.
      */
     @Benchmark
-    public void testFormat() {
+    public void perfFormat() {
         // last comparison
         // StringUtils.inject: 570 449,731 ops/s
         // String.format: 140 260,855 ops/s
@@ -72,7 +72,7 @@ public class AbstractMicrobenchmarkTest extends AbstractMicrobenchmark {
         } catch (AssertionError e) {
             assertNotNull(e);
             assertThat(e.getMessage(), Matchers.containsString(
-                    "[fr.landel.utils.microbenchmark.AbstractMicrobenchmarkTest.testFormat] Average score is lower than expected:"));
+                    "[fr.landel.utils.microbenchmark.AbstractMicrobenchmarkTest.perfFormat] Average score is lower than expected:"));
         }
     }
 }
