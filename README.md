@@ -26,4 +26,4 @@ Work progress:
 - AbstractMicrobenchmark: An abstract class to easily create JMH test cases
 
 ## License
-See [https://github.com/Gilandel/utils/LICENSE](main project license): Apache License, version 2.0
+See [main project license](https://github.com/Gilandel/utils/LICENSE): Apache License, version 2.0
