@@ -25,5 +25,84 @@ Work progress:
 ## Features:
 - AbstractMicrobenchmark: An abstract class to easily create JMH test cases
 
+## How to use it
+
+Add performance source directory (and resources) in pom.xml
+```xml
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>build-helper-maven-plugin</artifactId>
+	<executions>
+		<execution>
+			<id>add-perf-sources</id>
+			<phase>generate-sources</phase>
+			<goals>
+				<goal>add-test-source</goal>
+			</goals>
+			<configuration>
+				<sources>
+					<source>src/perf/java</source>
+				</sources>
+			</configuration>
+		</execution>
+		<!-- <execution>
+			<id>add-perf-resources</id>
+			<phase>generate-sources</phase>
+			<goals>
+				<goal>add-test-resource</goal>
+			</goals>
+			<configuration>
+				<resources>
+					<resource>
+						<directory>src/perf/resources</directory>
+					</resource>
+				</resources>
+			</configuration>
+		</execution> -->
+	</executions>
+</plugin>
+```
+
+Add dependency in pom.xml
+```
+<!-- Performance testing -->
+<dependency>
+	<groupId>fr.landel.utils</groupId>
+	<artifactId>utils-microbenchmark</artifactId>
+	<version>${utils-microbenchmark.version}</version>
+	<scope>test</scope>
+</dependency>
+```
+
+Create the performance class test
+```java
+@State(Scope.Benchmark)
+public class MyClassPerf extends AbstractMicrobenchmark {
+
+    @Override
+    protected double getExpectedMinNbOpsPerSeconds() {
+        return 200_000d; // the minimum number of operations per seconds
+    }
+    
+    /**
+     * Test method for
+     * {@link MyClass#myMethod}.
+     */
+    @Benchmark
+    public void testMyMethod() {
+		// Place here, code under test
+    }
+
+    @Test
+    public void testPerf() throws IOException, RunnerException {
+        assertNotNull(super.run());
+    }
+}
+```
+
+First run this class through 'mvn test' command.
+This will generate performance configuration.
+After that, test classes can be run like any other JUnit test case. 
+
 ## License
 See [main project license](https://github.com/Gilandel/utils/LICENSE): Apache License, version 2.0
