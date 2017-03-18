@@ -27,6 +27,10 @@ Work progress:
 
 ## How to use it
 
+Create source directory (and resources):
+- src/perf/java
+- src/perf/resources
+
 Add performance source directory (and resources) in pom.xml
 ```xml
 <plugin>
@@ -78,25 +82,25 @@ Create the performance class test
 ```java
 @State(Scope.Benchmark)
 public class MyClassPerf extends AbstractMicrobenchmark {
-
-    @Override
-    protected double getExpectedMinNbOpsPerSeconds() {
-        return 200_000d; // the minimum number of operations per seconds
-    }
-    
-    /**
-     * Test method for
-     * {@link MyClass#myMethod}.
-     */
-    @Benchmark
-    public void testMyMethod() {
+	
+	@Override
+	protected double getExpectedMinNbOpsPerSeconds() {
+		return 200_000d; // the minimum number of operations per seconds
+	}
+	
+	/**
+	 * Test method for
+	 * {@link MyClass#myMethod}.
+	 */
+	@Benchmark
+	public void testMyMethod() {
 		// Place here, code under test
-    }
-
-    @Test
-    public void testPerf() throws IOException, RunnerException {
-        assertNotNull(super.run());
-    }
+	}
+	
+	@Test
+	public void testPerf() throws IOException, RunnerException {
+		assertNotNull(super.run());
+	}
 }
 ```
 
