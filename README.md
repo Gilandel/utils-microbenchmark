@@ -69,11 +69,17 @@ Add performance source directory (and resources) in pom.xml
 
 Add dependency in pom.xml
 ```
+<!-- Unit testing -->
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<scope>test</scope>
+</dependency>
+
 <!-- Performance testing -->
 <dependency>
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>${utils-microbenchmark.version}</version>
 	<scope>test</scope>
 </dependency>
 ```
@@ -104,9 +110,27 @@ public class MyClassPerf extends AbstractMicrobenchmark {
 }
 ```
 
-First run this class through 'mvn test' command.
-This will generate performance configuration.
-After that, test classes can be run like any other JUnit test case. 
+First run this class or project through 'mvn test' command.
+This will generate sources for the performance test (target/generated-test-sources/test-annotations/**).
+After that, test classes can be run like any other JUnit test case.
+Re-run the Maven command after each signature modification.
+
+To analyze test error, the verbose can be increased by adding this:
+```java
+    @Override
+    protected VerboseMode getVerboseMode() {
+        return VerboseMode.EXTRA;
+    }
+```
+
+Others methods that can be overridden:
+- getWarmupIterations: the number of loops to warm-up the task under test (by default: 3)
+- getMeasureIterations: the number of loops to measure the task performance (by default: 5)
+- getNumForks: the number of forks to run (by default: 1)
+- getJvmArgs: the JVM arguments (by default: -server)
+- getOutputDirectory: the output directory (by default: target/benchmark)
+
+The "addOptions" can also be overridden to add extra options to the runner.
 
 ## License
 See [main project license](https://github.com/Gilandel/utils/LICENSE): Apache License, version 2.0
