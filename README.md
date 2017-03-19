@@ -6,9 +6,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/90454c15ecd24ce985b5ee82cb93a558)](https://www.codacy.com/app/gilles/utils-microbenchmark)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark)
 
-[![codecov.io tree](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master/graphs/tree.svg)](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master)
-[![codecov.io sunburst](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master/graphs/sunburst.svg)](https://codecov.io/gh/Gilandel/utils-benchmark/branch/master)
-
 Work progress:
 ![Code status](http://vbc3.com/script/progressbar.php?text=Code&progress=100)
 ![Test status](http://vbc3.com/script/progressbar.php?text=Test&progress=100)
