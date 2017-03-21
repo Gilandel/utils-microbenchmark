@@ -6,6 +6,10 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/90454c15ecd24ce985b5ee82cb93a558)](https://www.codacy.com/app/gilles/utils-microbenchmark)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark)
 
+[![Tokei LoC](https://tokei.rs/b1/github/Gilandel/utils-microbenchmark)](https://github.com/Aaronepower/tokei)
+[![Tokei NoFiles](https://tokei.rs/b1/github/Gilandel/utils-microbenchmark?category=files)](https://github.com/Aaronepower/tokei)
+[![Tokei LoComments](https://tokei.rs/b1/github/Gilandel/utils-microbenchmark?category=comments)](https://github.com/Aaronepower/tokei)
+
 Work progress:
 ![Code status](http://vbc3.com/script/progressbar.php?text=Code&progress=100)
 ![Test status](http://vbc3.com/script/progressbar.php?text=Test&progress=100)
