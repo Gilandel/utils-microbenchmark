@@ -66,8 +66,16 @@ public abstract class AbstractMicrobenchmark {
     public Collection<RunResult> run() throws IOException, RunnerException {
         final String classPath = this.getClass().getCanonicalName();
 
-        final ChainedOptionsBuilder runnerOptions = new OptionsBuilder().include(classPath).jvmArgs(this.getJvmArgs())
-                .warmupIterations(this.getWarmupIterations()).measurementIterations(this.getMeasureIterations()).forks(this.getNumForks());
+        // @formatter:off
+        final ChainedOptionsBuilder runnerOptions = new OptionsBuilder()
+                .include(classPath)
+                .jvmArgs(this.getJvmArgs())
+                .warmupIterations(this.getWarmupIterations())
+                .measurementIterations(this.getMeasureIterations())
+                .forks(this.getNumForks());
+        // @formatter:on
+
+        this.addOptions(runnerOptions);
 
         final File file = new File(this.getOutputDirectory(), classPath + ".json");
 
@@ -107,6 +115,16 @@ public abstract class AbstractMicrobenchmark {
         }
 
         return runResults;
+    }
+
+    /**
+     * Add extra options to the runner
+     * 
+     * @param runnerOptions
+     *            the current chained options builder
+     */
+    protected void addOptions(final ChainedOptionsBuilder runnerOptions) {
+        // do nothing
     }
 
     /**
