@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.stream.DoubleStream;
 
+import org.junit.Test;
 import org.openjdk.jmh.results.BenchmarkResult;
 import org.openjdk.jmh.results.IterationResult;
 import org.openjdk.jmh.results.RunResult;
@@ -52,9 +53,9 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractMicrobenchmark {
 
-    protected static final int WARMUP_ITERATIONS = 3;
-    protected static final int MEASURE_ITERATIONS = 5;
-    protected static final int NUM_FORKS = 1;
+    protected static final int DEFAULT_WARMUP_ITERATIONS = 3;
+    protected static final int DEFAULT_MEASURE_ITERATIONS = 5;
+    protected static final int DEFAULT_NUM_FORKS = 1;
 
     // Use the default JVM args
     protected static final String JVM_ARGS = "-server";
@@ -79,8 +80,11 @@ public abstract class AbstractMicrobenchmark {
 
         final File file = new File(this.getOutputDirectory(), classPath + ".json");
 
-        file.getParentFile().mkdirs();
-        file.delete();
+        if (!file.getParentFile().exists()) {
+            assertTrue(file.getParentFile().mkdirs());
+        } else {
+            file.delete();
+        }
 
         runnerOptions.resultFormat(ResultFormatType.JSON);
         runnerOptions.result(file.getAbsolutePath());
@@ -131,21 +135,21 @@ public abstract class AbstractMicrobenchmark {
      * @return the warmupIterations
      */
     protected int getWarmupIterations() {
-        return AbstractMicrobenchmark.WARMUP_ITERATIONS;
+        return AbstractMicrobenchmark.DEFAULT_WARMUP_ITERATIONS;
     }
 
     /**
      * @return the measureIterations
      */
     protected int getMeasureIterations() {
-        return AbstractMicrobenchmark.MEASURE_ITERATIONS;
+        return AbstractMicrobenchmark.DEFAULT_MEASURE_ITERATIONS;
     }
 
     /**
      * @return the numForks
      */
     protected int getNumForks() {
-        return AbstractMicrobenchmark.NUM_FORKS;
+        return AbstractMicrobenchmark.DEFAULT_NUM_FORKS;
     }
 
     /**
@@ -173,4 +177,17 @@ public abstract class AbstractMicrobenchmark {
      * @return the expectedMinNbOpsPerSeconds
      */
     protected abstract double getExpectedMinNbOpsPerSeconds();
+
+    /**
+     * Run the test
+     * 
+     * @throws IOException
+     *             on error related to the associated json file
+     * @throws RunnerException
+     *             on runner error
+     */
+    @Test
+    public void testRun() throws IOException, RunnerException {
+        assertNotNull(this.run());
+    }
 }

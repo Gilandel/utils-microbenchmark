@@ -61,7 +61,7 @@ public class AbstractMicrobenchmarkTest extends AbstractMicrobenchmark {
      * Test method for {@link AbstractMicrobenchmark#run()}.
      */
     @Test
-    public void testRun() throws IOException, RunnerException {
+    public void testRunSuper() throws IOException, RunnerException {
         assertNotNull(super.run());
 
         this.expected = 1_000_000_000d;
