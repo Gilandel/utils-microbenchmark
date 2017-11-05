@@ -22,7 +22,7 @@ install:
   # Install Codecov
   - pip install --user codecov
   # Install Codacity coverage reporter (install build reporter)
-  - curl $DEPLOYER_URL/codacity-coverage-reporter-install.sh | sh
+  - curl $DEPLOYER_URL/codacity-coverage-reporter-install.sh | sudo sh
 
 script:
   - mvn clean compile test jacoco:report
