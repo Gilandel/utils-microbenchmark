@@ -5,6 +5,7 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/58b29b6f7b9e15003a17e544/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58b29b6f7b9e15003a17e544)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/90454c15ecd24ce985b5ee82cb93a558)](https://www.codacy.com/app/gilles/utils-microbenchmark)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark)
+[![Javadocs](http://www.javadoc.io/badge/fr.landel.utils/utils-microbenchmark.svg)](http://www.javadoc.io/doc/fr.landel.utils/utils-microbenchmark)
 
 [![Tokei LoC](https://tokei.rs/b1/github/Gilandel/utils-microbenchmark)](https://github.com/Aaronepower/tokei)
 [![Tokei NoFiles](https://tokei.rs/b1/github/Gilandel/utils-microbenchmark?category=files)](https://github.com/Aaronepower/tokei)
@@ -19,7 +20,7 @@ Work progress:
 <dependency>
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 </dependency>
 ```
 
@@ -134,4 +135,4 @@ Others methods that can be overridden:
 The "addOptions" can also be overridden to add extra options to the runner.
 
 ## License
-See [main project license](https://github.com/Gilandel/utils/LICENSE): Apache License, version 2.0
+Apache License, version 2.0

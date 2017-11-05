@@ -1,40 +1,41 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>fr.landel</groupId>
 		<artifactId>utils</artifactId>
-		<version>1.0.4</version>
+		<version>1.0.11</version>
 	</parent>
 
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
 	<version>1.0.4-SNAPSHOT</version>
-	
+
 	<name>utils-microbenchmark</name>
 	<description>Utility module to create micro benchmark context</description>
-	
+
 	<scm>
 		<url>https://github.com/Gilandel/${project.artifactId}.git</url>
 		<connection>scm:git:git://github.com/Gilandel/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:Gilandel/${project.artifactId}.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-	
+
 	<issueManagement>
 		<system>Github</system>
 		<url>http://github.com/Gilandel/${project.artifactId}/issues</url>
 	</issueManagement>
-	
+
 	<ciManagement>
 		<system>Travis</system>
 		<url>https://travis-ci.org/Gilandel/${project.artifactId}</url>
 	</ciManagement>
-	
+
 	<properties>
 		<gpg.home>${env.HOME}/build/Gilandel/${project.artifactId}/distribution</gpg.home>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<!-- Add license header and generate third-party text file -->
@@ -74,7 +75,7 @@
 			<artifactId>junit</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<!-- Performance testing -->
 		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
