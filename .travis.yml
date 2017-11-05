@@ -31,8 +31,7 @@ after_success:
   # Call Codecov
   - codecov
   # Call Codacity coverage reporter
-  - java -cp $HOME/codacy-coverage-reporter-assembly.jar com.codacy.CodacyCoverageReporter -l Java -r target/site/jacoco/jacoco.xml
-  - curl $DEPLOYER_URL/codacity-coverage-reporter-clean.sh | sh
+  - curl $DEPLOYER_URL/codacity-coverage-reporter-runner.sh | sh -l Java -r target/site/jacoco/jacoco.xml
   # Stage artifact to Sonatype OSSRH
   - curl $DEPLOYER_URL/deploy.sh | bash
 
