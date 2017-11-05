@@ -31,7 +31,7 @@ after_success:
   # Call Codecov
   - codecov
   # Call Codacity coverage reporter
-  - curl $DEPLOYER_URL/codacity-coverage-reporter-runner.sh | sh -l Java -r target/site/jacoco/jacoco.xml
+  - curl $DEPLOYER_URL/codacity-coverage-reporter-runner.sh > ~/ccr.sh; sh ~/ccr.sh -l Java -r target/site/jacoco/jacoco.xml
   # Stage artifact to Sonatype OSSRH
   - curl $DEPLOYER_URL/deploy.sh | bash
 
