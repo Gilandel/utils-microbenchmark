@@ -17,9 +17,6 @@ cache:
 before_cache:
   # Cleanup the project repository
   - rm -rf $HOME/.m2/repository/$GROUP_ID_PATH
-
-before_install:
-  - sudo apt-get install jq
   
 install:
   # Install Codecov
