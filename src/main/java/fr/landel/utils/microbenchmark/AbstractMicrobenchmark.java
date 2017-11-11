@@ -117,10 +117,11 @@ public abstract class AbstractMicrobenchmark {
                 }
 
                 final Double avgScore = scores.build().average().getAsDouble();
-                LOGGER.info(String.format("[%s] score: %,.3f %s", result.getParams().getBenchmark(), avgScore, result.getScoreUnit()));
+                LOGGER.info(String.format("[%1$s] score: %2$,.3f %4$s, expected > %3$,.3f %4$s", result.getParams().getBenchmark(),
+                        avgScore, this.getExpectedMinNbOpsPerSeconds(), result.getScoreUnit()));
 
-                final String onBadScore = String.format("[%s] Average score is lower than expected: %,.3f ops/s < %,.3f ops/s",
-                        result.getParams().getBenchmark(), avgScore, this.getExpectedMinNbOpsPerSeconds());
+                final String onBadScore = String.format("[%1$s] Average score is lower than expected: %2$,.3f %4$s < %3$,.3f %4$s",
+                        result.getParams().getBenchmark(), avgScore, this.getExpectedMinNbOpsPerSeconds(), result.getScoreUnit());
                 assertTrue(onBadScore, avgScore > this.getExpectedMinNbOpsPerSeconds());
             }
         }
