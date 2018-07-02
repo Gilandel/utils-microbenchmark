@@ -2,7 +2,6 @@
 
 [![Build Status](https://api.travis-ci.org/Gilandel/utils-microbenchmark.svg?branch=master)](https://travis-ci.org/Gilandel/utils-microbenchmark/builds)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/90454c15ecd24ce985b5ee82cb93a558)](https://www.codacy.com/app/gilles/utils-microbenchmark)
-[![Dependency Status](https://www.versioneye.com/user/projects/58b29b6f7b9e15003a17e544/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58b29b6f7b9e15003a17e544)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/90454c15ecd24ce985b5ee82cb93a558)](https://www.codacy.com/app/gilles/utils-microbenchmark)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fr.landel.utils/utils-microbenchmark)
 [![Javadocs](http://www.javadoc.io/badge/fr.landel.utils/utils-microbenchmark.svg)](http://www.javadoc.io/doc/fr.landel.utils/utils-microbenchmark)
@@ -20,7 +19,7 @@ Work progress:
 <dependency>
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.6</version>
 </dependency>
 ```
 
@@ -133,6 +132,11 @@ Others methods that can be overridden:
 - getOutputDirectory: the output directory (by default: target/benchmark)
 
 The "addOptions" can also be overridden to add extra options to the runner.
+
+## Changelog
+### 1.0.6 - 2018-07-02
+- Misc: update dependencies
+- Misc: remove classpath definition from JAR (Wildfly warning when some dependencies are in multiple versions and defined provided)
 
 ## License
 Apache License, version 2.0
