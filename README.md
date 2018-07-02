@@ -19,7 +19,7 @@ Work progress:
 <dependency>
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 </dependency>
 ```
 
@@ -132,6 +132,11 @@ Others methods that can be overridden:
 - getOutputDirectory: the output directory (by default: target/benchmark)
 
 The "addOptions" can also be overridden to add extra options to the runner.
+
+## Changelog
+### 1.0.6 - 2018-07-02
+- Misc: update dependencies
+- Misc: remove classpath definition from JAR (Wildfly warning when some dependencies are in multiple versions and defined provided)
 
 ## License
 Apache License, version 2.0
