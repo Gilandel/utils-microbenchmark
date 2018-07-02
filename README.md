@@ -19,7 +19,7 @@ Work progress:
 <dependency>
 	<groupId>fr.landel.utils</groupId>
 	<artifactId>utils-microbenchmark</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 </dependency>
 ```
 
@@ -125,15 +125,30 @@ To analyze test error, the verbose can be increased by adding this:
 ```
 
 Others methods that can be overridden:
+- getWarmupMode: the warmup mode (default: INDI (do the individual warmup for every benchmark))
 - getWarmupIterations: the number of loops to warm-up the task under test (by default: 3)
-- getMeasureIterations: the number of loops to measure the task performance (by default: 5)
+- getWarmupBatchSize: the batch size in warmup mode (default: 1)
+- getWarmupForks: the number of warmup forks we discard (default: 0)
+- getWarmupTime: the duration of warmup iterations (default: 1 second)
+- getMeasurementThreads: the number of threads (default: 4)
+- getMeasurementIterations: the number of loops to measure the task performance (by default: 5)
+- getMeasurementBatchSize: the batch size in measurement mode (default: 1)
+- getMeasurementForks: the forks in which we measure the workload (default: 1)
+- getMeasurementTime: the duration of measurement iterations (default: 1 second)
 - getNumForks: the number of forks to run (by default: 1)
 - getJvmArgs: the JVM arguments (by default: -server)
 - getOutputDirectory: the output directory (by default: target/benchmark)
+- getVerboseMode: the verbose mode (default: silent)
+- getMode: the benchmark mode (default: Throughput, ops/time)
+- getTimeUnit: the time unit (default: seconds)
+- getOpsPerInvocation: the operations per invocation (default: 1)
 
 The "addOptions" can also be overridden to add extra options to the runner.
 
 ## Changelog
+### 1.0.7 - 2018-07-02
+- New: improve abstract microbenchmark class
+
 ### 1.0.6 - 2018-07-02
 - Misc: update dependencies
 - Misc: remove classpath definition from JAR (Wildfly warning when some dependencies are in multiple versions and defined provided)
